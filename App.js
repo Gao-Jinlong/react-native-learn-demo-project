@@ -14,6 +14,10 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as MediaLibrary from "expo-media-library";
 import { captureRef } from "react-native-view-shot";
 import domtimage from "dom-to-image";
+import * as SplashScreen from "expo-splash-screen";
+
+SplashScreen.preventAutoHideAsync(); // 阻塞启动屏幕
+setTimeout(SplashScreen.hideAsync, 2000);
 
 const PlaceholderImage = require("./assets/images/background-image.png");
 
@@ -133,7 +137,7 @@ export default function App() {
           onCloseModal={onModalClose}
         ></EmojiList>
       </EmojiPicker>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </GestureHandlerRootView>
   );
 }
